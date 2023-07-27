@@ -30,20 +30,20 @@ namespace Application.Activities
 
             public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
             {
-                try
-                {
-                    for(var i = 0; i < 10; i++) 
-                    {
-                        cancellationToken.ThrowIfCancellationRequested();
-                        await Task.Delay(1000, cancellationToken);
-                        _logger.LogInformation($"Task {i} has completed");
-                    }
-                }
-                catch (System.Exception)
-                {
+                // try
+                // {
+                //     for(var i = 0; i < 10; i++) 
+                //     {
+                //         cancellationToken.ThrowIfCancellationRequested();
+                //         await Task.Delay(1000, cancellationToken);
+                //         _logger.LogInformation($"Task {i} has completed");
+                //     }
+                // }
+                // catch (System.Exception)
+                // {
                     
-                    _logger.LogInformation("Task was cancelled");
-                }
+                //     _logger.LogInformation("Task was cancelled");
+                // }
                 return await _context.Activities.ToListAsync();
             }
         }
